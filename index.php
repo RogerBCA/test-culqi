@@ -11,11 +11,10 @@
       total="<?php echo $_GET['total'] ?>";
       var token = Culqi.token.id;
       $.getJSON("compra.php",{total:total , token:token}, function (json){
-        console.log('procesando');
-        console.log(json);
-        alert(json.charge_id);
-        console.log('finalizado');
-
+        //console.log('procesando');
+        //console.log(json);
+        alert(json.outcome.user_message);
+        //console.log('finalizado');
       });
     }else{ // ¡Hubo algún problema!
       // Mostramos JSON de objeto error en consola
@@ -31,7 +30,7 @@
     <input type="button" value="Pagar" name="buyButton" id="buyButton" >
     <script src="https://checkout.culqi.com/v2"></script>
     <script>
-    Culqi.publicKey = 'pk_test_c4pOf4OixsC3jltR';
+    Culqi.publicKey = 'pk_test_EQNpR7rENsAjYmk8';
     </script>
     <script>
     total="<?php echo $_GET['total'] ?>";
